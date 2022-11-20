@@ -1,0 +1,231 @@
+@import url(https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@600&display=swap);
+body aside nav ul .horarios, body aside nav ul .dias {
+  color: orangered;
+  text-align: center;
+  font-family: "Cormorant SC", serif; }
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box; }
+
+body {
+  background-color: black; }
+  body div p {
+    color: white;
+    text-align: center;
+    margin-top: 3rem; }
+  body header nav {
+    display: flex;
+    background: black;
+    height: 7rem;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px orangered solid; }
+    body header nav div {
+      display: flex;
+      align-items: center; }
+      body header nav div .logo {
+        height: 6rem;
+        margin-left: 1.5rem; }
+      body header nav div h1 {
+        color: white;
+        font-size: 1.6rem;
+        font-family: Arial, Helvetica, sans-serif; }
+    body header nav ul {
+      margin-right: 1.5rem; }
+      body header nav ul li {
+        display: inline-block;
+        line-height: 5rem;
+        list-style: none; }
+        body header nav ul li a {
+          color: #fff;
+          font-size: 1.1rem;
+          font-family: "Cormorant SC", serif;
+          padding: 0.5rem 0.8rem;
+          border-radius: 0.2rem;
+          text-transform: uppercase;
+          text-decoration: none; }
+        body header nav ul li a.active, body header nav ul li a:hover {
+          background: orangered;
+          transition: .5s; }
+    body header nav .checkbtn {
+      margin-right: 2.5rem;
+      cursor: pointer;
+      display: none; }
+    body header nav #check {
+      display: none; }
+  body main div {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "p-uno img-uno" "img-dos p-dos"; }
+    body main div .p-uno, body main div .p-dos {
+      text-align: center;
+      color: white;
+      font-size: 1.2rem;
+      align-items: center;
+      text-transform: uppercase;
+      font-family: "Cormorant SC", serif;
+      padding: 2rem; }
+    body main div .img-uno, body main div .img-dos {
+      border: 2px solid white;
+      width: 35rem;
+      height: auto;
+      margin: 4rem; }
+  body .mainform .container .p {
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: "Cormorant SC", serif;
+    text-transform: uppercase;
+    margin: 5rem; }
+  body .mainform .container .color-letra {
+    color: white; }
+  body figure .titulo {
+    color: orangered;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 3rem;
+    transition: 2s; }
+  body figure .titulo:hover {
+    height: 2rem; }
+  body figure div {
+    display: flex;
+    justify-content: space-around; }
+    body figure div div {
+      width: 15rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 5px 0 10px #ebe6e6;
+      justify-items: center;
+      justify-content: flex-end;
+      margin: 2rem; }
+      body figure div div img {
+        width: 90%; }
+      body figure div div p {
+        width: 100%;
+        background-color: orangered;
+        color: white;
+        text-align: center; }
+      body figure div div b {
+        color: #555252; }
+  body section div {
+    display: flex;
+    justify-content: center; }
+    body section div .video-celu {
+      display: none; }
+    body section div .video-table {
+      display: none; }
+  body aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem; }
+    body aside div {
+      display: flex;
+      justify-content: center; }
+      body aside div .ubi-celu {
+        display: none; }
+    body aside nav ul {
+      margin-bottom: 2rem; }
+      body aside nav ul .horarios {
+        margin: 1.5rem 0rem;
+        font-size: 1.2rem; }
+      body aside nav ul .dias {
+        font-size: 1.1rem; }
+
+@media (max-width: 952px) {
+  body header nav ul li a {
+    font-size: 0.8rem; }
+  body header nav div h1 {
+    font-size: 1.3rem; }
+  body main div {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "p-uno"  "img-uno" "img-dos" "p-dos"; }
+    body main div .p-uno, body main div .p-dos {
+      font-size: 1rem; }
+    body main div .img-uno, body main div .img-dos {
+      width: 35rem; }
+  body figure .titulo {
+    font-size: 1rem; }
+  body section div {
+    display: flex;
+    justify-content: center; }
+    body section div .video-table {
+      display: block; }
+    body section div .video-compu {
+      display: none; } }
+
+@media (max-width: 858px) {
+  body header nav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between; }
+    body header nav div h1 {
+      display: none; }
+    body header nav .checkbtn {
+      display: flex; }
+    body header nav ul {
+      display: flex;
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      top: 7rem;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+      flex-direction: column; }
+      body header nav ul li a {
+        font-size: 1rem; }
+      body header nav ul li a:hover, body header nav ul li a.active {
+        background: none;
+        color: orange; }
+    body header nav #check:checked ~ ul {
+      left: 0; }
+  body main div {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "p-uno"  "img-uno" "img-dos"  "p-dos"; }
+    body main div .p-uno, body main div .p-dos {
+      font-size: 1rem; }
+    body main div .img-uno, body main div .img-dos {
+      width: 20rem; }
+  body figure .titulo {
+    font-size: 0.9rem; }
+  body figure div {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  body section div {
+    display: flex;
+    justify-content: center; }
+    body section div .video-celu {
+      display: block; }
+    body section div .video-table {
+      display: none; }
+  body aside div .ubi-celu {
+    display: block; }
+  body aside div .ubi-compu {
+    display: none; }
+  body aside nav ul .horarios {
+    font-size: 1rem; }
+  body aside nav ul .dias {
+    font-size: 0.9rem; } }

@@ -1,0 +1,389 @@
+@import url(https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@600&display=swap);
+@import "base/variables";
+@import "base/mixin";
+@import "base/extend";
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    div{
+        p{
+            color: white;
+            text-align: center;
+            margin-top: 3rem;
+        }
+    }
+    background-color: black;
+    header{
+        nav{
+            display: flex;
+            background: black;
+            height: 7rem;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            border-bottom: 1px orangered solid;
+            div{
+                display: flex;
+                align-items: center;
+                .logo{
+                    height: 6rem;
+                    margin-left: 1.5rem;
+                }
+                h1{
+                    color: white;
+                    font-size: 1.6rem;
+                    font-family: $tipografia1;
+                }
+
+            }
+            ul{
+                margin-right: 1.5rem;
+       
+                
+            
+                li{
+                    display: inline-block;
+                    line-height: 5rem;
+                    list-style: none;
+                    
+                    a{
+                        color: #fff;
+                        font-size: 1.1rem;
+                        font-family: $tipografia2;
+                        padding: 0.5rem 0.8rem;
+                        border-radius: 0.2rem;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                    }
+                    a.active,a:hover{
+                        background:orangered;
+                        transition: .5s;
+                    }
+                }
+            }
+            .checkbtn{
+                margin-right: 2.5rem;
+                cursor: pointer;
+                display: none;
+
+            }
+            #check{
+                display: none;
+            }
+
+        }
+    }
+    main{
+        div{
+            @include div;
+            grid-template-areas: 
+            "p-uno img-uno"
+            "img-dos p-dos"
+            ;
+   
+            .p-uno, .p-dos{
+                text-align: center;
+                color: white;
+                font-size: 1.2rem;
+                align-items: center;
+                text-transform: uppercase;
+                font-family: $tipografia2; 
+                padding: 2rem;
+            } 
+
+            .img-uno,.img-dos{
+                border: 2px solid white;
+                width: 35rem;
+                height: auto;
+                margin: 4rem;
+            }
+
+        }
+        
+    }
+
+    .mainform{
+        .container{
+            .p{
+                @include p;
+            }
+            .color-letra{
+                color: white;
+            } 
+    }
+    }
+    figure{
+        .titulo{
+            color: orangered;
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 3rem;
+            transition: 2s;
+        }
+        .titulo:hover{
+            height: 2rem;
+
+        }
+        div{
+            display: flex;
+            justify-content: space-around;
+        
+            div{
+            width: 15rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 5px 0 10px rgb(235, 230, 230);
+            justify-items: center;
+            justify-content: flex-end;
+            margin: 2rem;
+         
+            img{
+                width: 90%;
+            }
+            p{
+                width: 100%;
+                background-color:orangered;
+                color: white;
+                text-align: center;
+
+            }
+            b{
+                color: rgb(85, 82, 82);
+            }
+        }
+
+        }
+        
+    }
+
+    section{
+        div{
+            display: flex;
+            justify-content: center;
+            .video-celu{
+                display: none;
+            }
+            .video-table{
+                display: none;
+            }
+        }
+    }
+
+    aside{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 3rem;
+
+        div{
+            display: flex;
+            justify-content: center;
+            .ubi-celu{
+                display: none;
+            }
+        }
+
+        nav{
+            ul{
+                margin-bottom: 2rem;
+                .horarios{
+                    @extend %hd;
+                    margin: 1.5rem 0rem;
+                    font-size: 1.2rem;
+                    
+                }
+                .dias{
+                    @extend %hd;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+ 
+    }
+
+
+}
+
+
+@media (max-width: 952px){
+    body{
+        header{
+            nav{
+                ul{
+                    li{
+                        a{
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+                div{
+                    h1{
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+            
+        }
+        
+        main{
+            div{
+                @include div;
+                grid-template-areas: 
+                "p-uno" 
+                "img-uno"
+                "img-dos"
+                "p-dos"
+                ;
+                .p-uno, .p-dos{
+                    font-size: 1rem;
+                }  
+                .img-uno,.img-dos{
+                    width: 35rem;
+                }
+            }
+            
+        }
+
+        figure{
+            .titulo{
+                font-size: 1rem;
+            }
+        }
+        section{
+            div{
+                display: flex;
+                justify-content: center;
+                .video-table{
+                    display: block;
+                }
+                .video-compu{
+                    display: none;
+                }
+            }
+    
+        }
+    
+    }
+}
+@media (max-width: 858px){
+    body{
+        header{
+            nav{
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                div{
+                    h1{
+                        display: none;
+                    }
+                }
+                .checkbtn{
+                    display: flex;
+                }
+                ul{
+                    display: flex;
+                    position: fixed;
+                    width: 100%;
+                    height: 100vh;
+                    background: #2c3e50;
+                    top: 7rem;
+                    left: -100%;
+                    text-align: center;
+                    transition: all .5s;
+                    flex-direction: column;
+                    li{
+                        a{
+                            font-size: 1rem;
+                            
+                        }
+                        a:hover,a.active{
+                            background: none;
+                            color: orange;
+
+                        } 
+                    }
+                }
+                #check:checked ~ ul{
+                    left:0;
+                }
+            }
+
+        }
+        main{
+            div{
+                @include div;
+                grid-template-areas: 
+                "p-uno" 
+                "img-uno"
+                "img-dos" 
+                "p-dos"
+                ;
+
+                .p-uno, .p-dos{
+                    font-size: 1rem;
+                    
+                }  
+                .img-uno,.img-dos{
+                    width: 20rem;
+                }
+            }
+            
+        }
+        figure{
+            .titulo{
+                font-size: 0.9rem;
+            }
+            div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+              
+        }
+  
+        section{
+            div{
+                display: flex;
+                justify-content: center;
+                .video-celu{
+                    display: block;
+                }
+                .video-table{
+                    display: none;
+                }
+               
+            }
+    
+        }
+        aside{
+
+            div{
+                .ubi-celu{
+                    display: block;
+                }
+                .ubi-compu{
+                    display: none;
+                }
+            }
+
+            nav{
+                ul{
+                    .horarios{
+                        font-size: 1rem;
+                    }
+                    .dias{
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+            
+        }
+    }
+}
